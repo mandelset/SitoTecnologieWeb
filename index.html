@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Emscripten</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" /> <!--la pagina si adatta al disposizione-->
+        <link rel="stylesheet" href="./assets/style.css">
+    </head>
+
+    <body>
+        <div id="app">
+            <nav>
+                <img id="banner" src="./assets/banner.png">   
+                <ul>
+                    <li id="homebutton">
+                        <router-link to="/">
+                            Home
+                        </router-link>
+                    </li>
+                    <li id="historybutton" >
+                        <router-link to="/about_es">
+                            About Emscripten
+                        </router-link>
+                    </li>
+                    <li id="playbutton">
+                        <router-link to="/examples">
+                            Examples
+                        </router-link>
+                    </li>
+                    <li id="aboutbutton">
+                        <router-link to="/about_us">
+                            About Us
+                        </router-link>        
+                    </li>
+                </ul>
+            </nav>
+
+            <router-view></router-view>
+        </div>
+
+        <script src="https://unpkg.com/vue@3"></script>
+        <script src="https://unpkg.com/vue-router@4"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
