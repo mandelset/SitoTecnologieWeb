@@ -40,6 +40,12 @@ nav>h1 {
     height: auto;
 }
 
+footer {
+    color: white;
+    max-width: 100%;
+    background-color: yellowgreen;
+}
+
 nav>ul {
     display: flex;
     justify-content: center;
@@ -62,28 +68,12 @@ nav>ul {
 }
 
 nav>ul>li {
-    background-color: whitesmoke;
+    background: yellowgreen;
     font-size: 15px;
     
     padding-top: 5px;
     padding-bottom: 5px;
 
-}
-
-#homebutton {
-    background: yellowgreen
-}
-
-#historybutton {
-    background: yellowgreen
-}
-
-#playbutton {
-    background: yellowgreen
-}
-
-#aboutbutton {
-    background: yellowgreen
 }
 
 nav>ul>li:hover {
