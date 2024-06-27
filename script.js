@@ -2,7 +2,7 @@ const Home = {
     template: `
     <main>
         <article>
-            <h2 id="h2-title" class="text-center m-4">What does this website do?</h2>
+            <h2 id="h2-title" class="text-center m-4">What is this website?</h2>
 			<!-- la classe img-fluid rende le immagini responsive -->
            	<figure class="text-center"> 
 				<img src="../assets/emscripten_logo.png" class="figure-img img-fluid " style="width: 400px;" alt="Emscripten Logo"/>
