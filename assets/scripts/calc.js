@@ -636,7 +636,7 @@ function createExportWrapper(name, nargs) {
 // include: runtime_exceptions.js
 // end include: runtime_exceptions.js
 var wasmBinaryFile;
-  wasmBinaryFile = 'out.wasm';
+  wasmBinaryFile = 'calc.wasm';
   if (!isDataURI(wasmBinaryFile)) {
     wasmBinaryFile = locateFile(wasmBinaryFile);
   }
@@ -987,7 +987,10 @@ var wasmImports = {
 };
 var wasmExports = createWasm();
 var ___wasm_call_ctors = createExportWrapper('__wasm_call_ctors', 0);
+var _add = Module['_add'] = createExportWrapper('add', 2);
+var _subtract = Module['_subtract'] = createExportWrapper('subtract', 2);
 var _multiply = Module['_multiply'] = createExportWrapper('multiply', 2);
+var _divide = Module['_divide'] = createExportWrapper('divide', 2);
 var _fflush = createExportWrapper('fflush', 1);
 var _emscripten_stack_init = () => (_emscripten_stack_init = wasmExports['emscripten_stack_init'])();
 var _emscripten_stack_get_free = () => (_emscripten_stack_get_free = wasmExports['emscripten_stack_get_free'])();

@@ -112,7 +112,9 @@ const AboutUs = {
 const BasicCalc = {
     data() {
         return {
-            message: "Ao Oni"
+            result: "",
+            num1: "",
+            num2: ""
         }
     },
     template: `
@@ -121,23 +123,60 @@ const BasicCalc = {
         <p class="text-center m-4 p-2 bg-body-secondary">
            A basic calculator
         </p>
+        <div class="d-flex flex-row mb-4 text-center justify-content-center gap-3">
+            <input v-model="num1" placeholder="Number 1" type="number" class="form-control p-2">
+            <input v-model="num2" placeholder="Number 2" type="number" class="form-control p-2">
+        </div>
         <p class="text-center m-4 p-2">
-            Il risultato è {{ message }}
+            Result is {{ result }}
         </p>
         <div class="d-flex flex-row mb-4 text-center justify-content-center gap-3">
-            <button class="btn btn-primary p-2" v-on:click="changeText">Add</button>
-            <button class="btn btn-primary p-2" v-on:click="changeText">Subtract</button>
-            <button class="btn btn-primary p-2" v-on:click="changeText">Multiply</button>
-            <button class="btn btn-primary p-2" v-on:click="changeText">Divide</button>
+            <button class="btn btn-primary p-2" v-on:click="add">Add</button>
+            <button class="btn btn-primary p-2" v-on:click="subtract">Subtract</button>
+            <button class="btn btn-primary p-2" v-on:click="multiply">Multiply</button>
+            <button class="btn btn-primary p-2" v-on:click="divide">Divide</button>
         </div>
     </main>
     `,
     mounted() {
-        console.log("Examples mounted")
+        console.log("Calculator mounted");
     },
     methods: {
-        changeText() {
-            this.message = "Get Ao";
+        add() {
+            fetch("/assets/scripts/calc.wasm")
+            .then(response => response.arrayBuffer())
+            .then(bytes => WebAssembly.instantiate(bytes))
+            .then(results => {
+                const { add } = results.instance.exports;
+                this.result = (add(this.num1, this.num2).toPrecision(2));
+            });
+        },
+        subtract() {
+            fetch("/assets/scripts/calc.wasm")
+            .then(response => response.arrayBuffer())
+            .then(bytes => WebAssembly.instantiate(bytes))
+            .then(results => {
+                const { subtract } = results.instance.exports;
+                this.result = (subtract(this.num1, this.num2).toPrecision(2));
+            });
+        },
+        multiply() {
+            fetch("/assets/scripts/calc.wasm")
+            .then(response => response.arrayBuffer())
+            .then(bytes => WebAssembly.instantiate(bytes))
+            .then(results => {
+                const { multiply } = results.instance.exports;
+                this.result = (multiply(this.num1, this.num2).toPrecision(2));
+            });
+        },
+        divide() {
+            fetch("/assets/scripts/calc.wasm")
+            .then(response => response.arrayBuffer())
+            .then(bytes => WebAssembly.instantiate(bytes))
+            .then(results => {
+                const { divide } = results.instance.exports;
+                this.result = (divide(this.num1, this.num2).toPrecision(2));
+            });
         }
     }
 };
