@@ -1,3 +1,5 @@
+// eventualmente in futuro importare le pagine come file js esterni?
+
 const Home = {
     template: `
     <main>
@@ -5,20 +7,22 @@ const Home = {
             <h2 class="text-center m-4">What is this website?</h2>
 			<!-- la classe img-fluid rende le immagini responsive -->
            	<figure class="text-center"> 
-				<img src="../assets/emscripten_logo.png" class="figure-img img-fluid " style="width: 400px;" alt="Emscripten Logo"/>
+				<img src="../assets/images/emscripten_logo.png" class="figure-img img-fluid " style="width: 400px;" alt="Emscripten Logo"/>
 				<figcaption class="figure-caption">Emscripten, the compiler used to build the example of this website</figcaption>
            	</figure> 
             <p class="text-center m-4 p-2 bg-body-secondary">
                 This website utizilies technology able to convert C/C++ programs into web-assembly; This allows us to run such programs in the browser web. The use of script in web-assembly enables us to obtain better performance and optimized code, with this being very useful to calculation-focused applications (such as games and mathematical-oriented programs).
             </p>
            	<figure class="text-center"> 
-				<img src="../assets/ClangWasm.png" class="figure-img img-fluid" style="width: 500px;" alt="Emscripten Toolchain"/>
+				<img src="../assets/images/ClangWasm.png" class="figure-img img-fluid" style="width: 500px;" alt="Emscripten Toolchain"/>
             	<figcaption class="figure-caption">An example showing how simple the Emscripten toolchain could be</figcaption>
        		</figure> 
 		</article>
     </main>
     `,
     mounted() {
+        // test per vedere se la pagina viene montata
+        // poi da rimuovere
         console.log("Home mounted")
     }
 };
@@ -37,7 +41,7 @@ const AboutES = {
             </p>
 			
 			<figure class="text-center">
-				<img src="../assets/quake3.jpeg" class="figure-img img-fluid" style="width: 500px;" alt="Quake 3 Arena screenshot"/>
+				<img src="../assets/images/quake3.jpeg" class="figure-img img-fluid" style="width: 500px;" alt="Quake 3 Arena screenshot"/>
 				<figcaption class="figure-caption">A screenshot of id Software's game, Quake 3 Arena</figcaption>
 			</figure>
             
@@ -71,7 +75,7 @@ const AboutES = {
             </div>
 			
 			<figure class="text-center">
-            	<img src="../assets/screen1.jpg" class="figure-img img-fluid" style="width: 500px;" alt="Emscripten app screenshot"/>
+            	<img src="../assets/images/screen1.jpg" class="figure-img img-fluid" style="width: 500px;" alt="Emscripten app screenshot"/>
             	<figcaption class="figure-caption">Unreal Engine 3 ported to Web, thanks to Emscripten</figcaption>
 			</figure>
 
@@ -96,7 +100,7 @@ const AboutUs = {
                 <br>
                 <br>biagio.fino@studio.unibo.it</p>
             <h3>Phone numbers</h3>
-            <img src="../assets/8bd1d2bc19aeaafe37d5a559be1a017b.jpg" alt="Nuh uh"/>
+            <img src="../assets/images/8bd1d2bc19aeaafe37d5a559be1a017b.jpg" alt="Nuh uh"/>
         </article>
     </main>
     `,
@@ -120,8 +124,11 @@ const BasicCalc = {
         <p class="text-center m-4 p-2">
             Il risultato è {{ message }}
         </p>
-        <div class="text-center">
-            <button class="btn btn-primary" v-on:click="changeText">Click</button>
+        <div class="d-flex flex-row mb-4 text-center justify-content-center gap-3">
+            <button class="btn btn-primary p-2" v-on:click="changeText">Add</button>
+            <button class="btn btn-primary p-2" v-on:click="changeText">Subtract</button>
+            <button class="btn btn-primary p-2" v-on:click="changeText">Multiply</button>
+            <button class="btn btn-primary p-2" v-on:click="changeText">Divide</button>
         </div>
     </main>
     `,
