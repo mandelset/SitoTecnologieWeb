@@ -27,11 +27,11 @@ const AboutES = {
     template: `
     <main>
         <article>
-            <h2 class="text-center m-4 text-light-emphasis">What is Emscripten?</h2>
+            <h2 class="text-center m-4">What is Emscripten?</h2>
             <p class="text-center m-4 p-2 bg-body-secondary">
                 Emscripten is a compiler that converts C and C++ code into WebAssembly (WASM) or JavaScript, allowing developers to run native code in web browsers or Node.js environments. Here's a brief history of Emscripten and an overview of what it does.
             </p>
-            <h3 class="text-left m-4">Early days (2010-2011)</h3>
+            <h3 class="text-center m-4 text-light-emphasis">Early days (2010-2011)</h3>
             <p class="text-center m-4 p-2 bg-body-secondary">
                 Emscripten was created by Alon Zakai, a Mozilla engineer, in 2010. At the time, Zakai was working on a project to port the Quake III Arena game engine to run in a web browser. He realized that compiling C code to JavaScript would be a more efficient approach than rewriting the entire engine in JavaScript. Zakai's initial implementation, called "Emscripten," was a simple C-to-JavaScript compiler.
             </p>
@@ -41,15 +41,15 @@ const AboutES = {
 				<figcaption class="figure-caption">A screenshot of id Software's game, Quake 3 Arena</figcaption>
 			</figure>
             
-			<h3 class="text-right m-4">Development and growth (2011-2013)</h3>
+			<h3 class="text-center m-4 text-light-emphasis">Development and growth (2011-2013)</h3>
             <p class="text-center m-4 p-2 bg-body-secondary">
                 In 2011, Emscripten was open-sourced and gained popularity as a tool for porting native games and applications to the web. The compiler was initially based on the LLVM compiler infrastructure project, which provided a robust framework for building compilers. Emscripten's development accelerated, and it began to support more C and C++ features, including dynamic linking, exceptions, and RTTI (Run-Time Type Information).
             </p>
-            <h3 class="text-left m-4">WebAssembly (2015)</h3>
+            <h3 class="text-center m-4 text-light-emphasis">WebAssembly (2015)</h3>
             <p class="text-center m-4 p-2 bg-body-secondary">
                 In 2015, the WebAssembly (WASM) project was announced, aiming to provide a binary instruction format for the web. Emscripten was one of the first compilers to support WASM, and it became a key player in the WASM ecosystem. With WASM, Emscripten could generate more efficient and portable code, which could be executed by web browsers and Node.js environments without the need for JavaScript.
             </p>
-            <h3 class="text-right m-4">Modern Emscripten (2016-present)</h3>
+            <h3 class="text-center m-4 text-light-emphasis">Modern Emscripten (2016-present)</h3>
             <div class="text-center m-4 p-2 bg-body-secondary">
                 Today, Emscripten is a mature compiler that supports a wide range of C and C++ features, including:
                 <ul>
@@ -60,7 +60,7 @@ const AboutES = {
                     <li>Emulation of native APIs: Emscripten provides emulations of native APIs, such as OpenGL, OpenAL, and SDL, allowing developers to port native applications with minimal modifications.</li>
                 </ul>
             </div>
-            <h3 class="text-left m-4">Emscripten's Uses</h3>
+            <h3 class="text-center m-4 text-light-emphasis">Emscripten's Uses</h3>
             <div class="text-center m-4 p-2 bg-body-secondary">
                 Emscripten is widely used in various industries, including:
                 <ul>
@@ -105,7 +105,7 @@ const AboutUs = {
     }
 };
 
-const Examples = {
+const BasicCalc = {
     data() {
         return {
             message: "Ao Oni"
@@ -113,13 +113,16 @@ const Examples = {
     },
     template: `
     <main>
-        <p>
-            L'applicazione di esempio fatta con Emscripten andrà qui.
+        <h2 class="text-center m-4">Calculator</h2>
+        <p class="text-center m-4 p-2 bg-body-secondary">
+           A basic calculator
         </p>
-        <p>
+        <p class="text-center m-4 p-2">
             Il risultato è {{ message }}
         </p>
-        <button type="button" v-on:click="changeText">Click</button>
+        <div class="text-center">
+            <button class="btn btn-primary" v-on:click="changeText">Click</button>
+        </div>
     </main>
     `,
     mounted() {
@@ -132,12 +135,40 @@ const Examples = {
     }
 };
 
+const Scene3D = {
+    template: `
+    <main>
+        <h2 class="text-center m-4">3D scene</h2>
+        <p class="text-center m-4 p-2 bg-body-secondary">A basic 3D scene</p>
+    </main>
+    `
+};
+
+const DataManager = {
+    template: `
+        <main>
+            <h2 class="text-center m-4">Data Manager</h2>
+        </main>
+    `
+}
+
+const Table = {
+    template: `
+        <main>
+            <h2 class="text-center m-4">Table</h2>
+        </main>
+    `
+}
+
 // define VueRoute routes
 const routes = [
     { path: '/', component: Home },
     { path: '/about_es', component: AboutES },
-    { path: '/examples', component: Examples },
     { path: '/about_us', component: AboutUs },
+    { path: '/scene_3d', component: Scene3D},
+    { path: '/basic_calc', component: BasicCalc },
+    { path: '/data_manager', component: DataManager},
+    { path: '/table', component: Table}
 ];
 
 // create VueRouter 
