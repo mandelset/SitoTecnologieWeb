@@ -13,64 +13,68 @@
 
 <body>
   <div id="app">
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <!-- Rimuovere poi l'href perché superfluo? -->
-        <a class="navbar-brand" href="/">Discover Emscripten</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <router-link to="/" class="nav-link">Home</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/about_es" class="nav-link">About Emscripten</router-link>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
-                Examples
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item">
-                    <router-link to="/basic_calc" class="nav-link">Basic Calculator</router-link>
-                  </a>
-                  <a class="dropdown-item">
-                    <router-link to="/scene_3d" class="nav-link">3D Scene</router-link>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
-                Misc
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item">
-                    <router-link to="/data_manager" class="nav-link">Data Manager</router-link>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item">
-                    <router-link to="/table" class="nav-link">Table</router-link>
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
+    <div id="wrapper">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <!-- Rimuovere poi l'href perché superfluo? -->
+          <a class="navbar-brand" href="/">Discover Emscripten</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <router-link to="/" class="nav-link">Home</router-link>
+              </li>
+              <li class="nav-item">
+                <router-link to="/about_es" class="nav-link">About Emscripten</router-link>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                  Examples
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item">
+                      <router-link to="/basic_calc" class="nav-link">Basic Calculator</router-link>
+                    </a>
+                    <a class="dropdown-item">
+                      <router-link to="/scene_3d" class="nav-link">3D Scene</router-link>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                  Misc
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item">
+                      <router-link to="/data_manager" class="nav-link">Data Manager</router-link>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item">
+                      <router-link to="/table" class="nav-link">Table</router-link>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
     
-    <div class="container vh-100">
-      <router-view></router-view>
+    
+      <div class="container mb-5">
+        <router-view></router-view>
+      </div>
+
     </div>
 
-    <footer class="footer mt-5 py-3 text-center" style="background-color: yellowgreen;">
+    <footer class="footer text-center" style="background-color: yellowgreen;">
       <div class="container-fluid">
         Made by <a class="text-primary-emphasis" href="mailto:tommaso.bedetti@studio.unibo.it">Tommaso Bedetti</a>, <a class="text-primary-emphasis" href="mailto:biagio.fino@studio.unibo.it">Biagio Fino</a> @ 2024
       </div>
