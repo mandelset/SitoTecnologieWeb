@@ -7,7 +7,7 @@ const Home = {
             <h2 class="text-center m-4">What is this website?</h2>
 			<!-- la classe img-fluid rende le immagini responsive -->
            	<figure class="text-center"> 
-				<img src="../assets/images/emscripten_logo.png" class="figure-img img-fluid " style="width: 400px;" alt="Emscripten Logo"/>
+				<img src="../assets/images/emscripten_logo.png" class="figure-img img-fluid " style="width: 500px;" alt="Emscripten Logo"/>
 				<figcaption class="figure-caption">Emscripten, the compiler used to build the example of this website</figcaption>
            	</figure> 
             <p class="text-center m-4 p-2 bg-body-secondary">
@@ -53,6 +53,12 @@ const AboutES = {
             <p class="text-center m-4 p-2 bg-body-secondary">
                 In 2015, the WebAssembly (WASM) project was announced, aiming to provide a binary instruction format for the web. Emscripten was one of the first compilers to support WASM, and it became a key player in the WASM ecosystem. With WASM, Emscripten could generate more efficient and portable code, which could be executed by web browsers and Node.js environments without the need for JavaScript.
             </p>
+
+            <figure class="text-center">
+				<img src="../assets/images/ut99.png" class="figure-img img-fluid" style="width: 500px;" alt="UT99 ported to Emscripten"/>
+				<figcaption class="figure-caption">Classic game Unreal Tournament, running on a web browser thanks to Emscripten</figcaption>
+			</figure>
+
             <h3 class="text-center m-4 text-light-emphasis">Modern Emscripten (2016-present)</h3>
             <div class="text-center m-4 p-2 bg-body-secondary">
                 Today, Emscripten is a mature compiler that supports a wide range of C and C++ features, including:
@@ -64,6 +70,12 @@ const AboutES = {
                     <li>Emulation of native APIs: Emscripten provides emulations of native APIs, such as OpenGL, OpenAL, and SDL, allowing developers to port native applications with minimal modifications.</li>
                 </ul>
             </div>
+
+            <figure class="text-center">
+				<img src="../assets/images/EmscriptenToolchain.png" class="figure-img img-fluid" style="width: 500px;" alt="Emscripten toolchain diagram"/>
+				<figcaption class="figure-caption">Diagram showing how Emscripten SDK toolchain works step by step</figcaption>
+			</figure>
+
             <h3 class="text-center m-4 text-light-emphasis">Emscripten's Uses</h3>
             <div class="text-center m-4 p-2 bg-body-secondary">
                 Emscripten is widely used in various industries, including:
@@ -74,6 +86,11 @@ const AboutES = {
                 </ul>
             </div>
 			
+            <figure class="text-center">
+				<img src="../assets/images/d3wasm.jpg" class="figure-img img-fluid" style="width: 500px;" alt="Doom 3 ported to WASM"/>
+				<figcaption class="figure-caption">id tech 4, an advanced game engine, ported to Web Assembly</figcaption>
+			</figure>
+
 			<figure class="text-center">
             	<img src="../assets/images/screen1.jpg" class="figure-img img-fluid" style="width: 500px;" alt="Emscripten app screenshot"/>
             	<figcaption class="figure-caption">Unreal Engine 3 ported to Web, thanks to Emscripten</figcaption>

@@ -15,6 +15,10 @@ per ora guarda qui: https://www.freecodecamp.org/news/how-to-keep-your-footer-wh
     padding-bottom: 30px;
 }
 
+#page-image {
+    max-width: 500px;
+}
+
 footer {
     position: absolute;
     bottom: 0;
