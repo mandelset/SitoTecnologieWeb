@@ -204,7 +204,10 @@ const Scene3D = {
         <h2 class="text-center m-4">3D scene</h2>
         <p class="text-center m-4 p-2 bg-body-secondary">A basic 3D scene</p>
     </main>
-    `
+    `,
+    data() {
+
+    }
 };
 
 const DataManager = {
@@ -216,11 +219,42 @@ const DataManager = {
 }
 
 const Table = {
+    data() {
+        return {
+            datas: null,
+        };
+    },
     template: `
         <main>
             <h2 class="text-center m-4">Table</h2>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Application</th>
+                        <th scope="col">Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="data in datas">
+                        <td>{{ data.id }}</td>
+                        <td>{{ data.application }}</td>
+                        <td>{{ data.type }}</td>
+                    </tr>
+                </tbody>
         </main>
-    `
+    `,
+    methods: {
+        fetchData() {
+            axios.get("./assets/data.json").then(response => {
+                this.datas = response.data;
+            });
+        }
+    },
+    mounted() {
+        this.fetchData();
+    }
 }
 
 // define VueRoute routes
