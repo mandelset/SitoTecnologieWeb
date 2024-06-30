@@ -228,21 +228,22 @@ const Table = {
         <main>
             <h2 class="text-center m-4">Table</h2>
 
-            <table class="table">
+            <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Application</th>
-                        <th scope="col">Type</th>
+                        <th scope="col" class="text-center">#</th>
+                        <th scope="col" class="text-center">Application</th>
+                        <th scope="col" class="text-center">Type</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="data in datas">
-                        <td>{{ data.id }}</td>
-                        <td>{{ data.application }}</td>
-                        <td>{{ data.type }}</td>
+                        <td class="text-center">{{ data.id }}</td>
+                        <td class="text-center">{{ data.application }}</td>
+                        <td class="text-center">{{ data.type }}</td>
                     </tr>
                 </tbody>
+            </table>
         </main>
     `,
     methods: {
