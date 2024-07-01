@@ -211,11 +211,63 @@ const Scene3D = {
 };
 
 const DataManager = {
+    data() {
+        return {
+            apps: axios.get("./assets/data.json").then(response => {
+                
+                console.log(response); //debug
+                this.apps = response.data;
+                
+            }),
+            selected: 0,
+        };
+    },
     template: `
         <main>
             <h2 class="text-center m-4">Data Manager</h2>
+            <div class="d-flex flex-row gap-2">
+                <select class="form-select" v-model="selected">
+                    <option v-for="(app, index) in apps" v-bind:value="index">
+                        {{ app.id }}
+                    </option>
+                </select>
+
+                <input v-model="apps[selected].application" type="text" placeholder="Application" class="form-control">
+                <input v-model="apps[selected].type" type="text" placeholder="Type" class="form-control">
+                
+                <button class="btn btn-primary" v-on:click="deleteItem">Delete</button>
+            </div>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-center">#</th>
+                        <th scope="col" class="text-center">Application</th>
+                        <th scope="col" class="text-center">Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="app in apps">
+                        <td class="text-center">{{ app.id }}</td>
+                        <td class="text-center">{{ app.application }}</td>
+                        <td class="text-center">{{ app.type }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
         </main>
-    `
+    `,
+    methods: {
+        deleteItem() {
+            console.log("Trying to delete...");
+            this.apps.splice(this.selected, 1);
+            
+            this.selected = 0;
+        }
+    },
+    mounted() {
+        
+    }
 }
 
 const Table = {
